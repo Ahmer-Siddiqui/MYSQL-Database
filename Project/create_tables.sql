@@ -2,6 +2,9 @@
                 --      ELECTION MANAGEMENT SYSTEM - MySQL Database
                 -- =====================================================
 
+-- Disable foreign key checks to allow dropping tables in any order
+SET FOREIGN_KEY_CHECKS = 0;
+
 DROP DATABASE IF EXISTS election_management_system;
 CREATE DATABASE election_management_system;
 USE election_management_system;
@@ -10,7 +13,7 @@ USE election_management_system;
 -- TABLE CREATION (35 Tables)
 -- =====================================================
 
--- 1. ADMINS
+-- 1. ADMINS *
 CREATE TABLE admins (
     id INT PRIMARY KEY AUTO_INCREMENT,
     profile VARCHAR(255),
@@ -24,7 +27,7 @@ CREATE TABLE admins (
     created_by INT, updated_by INT, deleted_by INT
 );
 
--- 2. USERS
+-- 2. USERS *
 CREATE TABLE users (
     id INT PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR(50) NOT NULL,
@@ -38,7 +41,7 @@ CREATE TABLE users (
     created_by INT, updated_by INT, deleted_by INT
 );
 
--- 3. ROLES
+-- 3. ROLES *
 CREATE TABLE roles (
     id INT PRIMARY KEY AUTO_INCREMENT,
     role_name VARCHAR(50) UNIQUE NOT NULL,
@@ -524,3 +527,5 @@ CREATE TABLE election_budgets (
     FOREIGN KEY (election_id) REFERENCES elections(id)
 );
 
+-- Re-enable foreign key checks
+SET FOREIGN_KEY_CHECKS = 1;

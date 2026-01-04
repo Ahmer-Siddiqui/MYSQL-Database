@@ -1,5 +1,5 @@
 -- =====================================================
--- TABLE 1: ADMINS (100 Records)
+-- TABLE 1: ADMINS (100 Records) *
 -- =====================================================
 
 INSERT INTO admins (profile, name, email, password, status, created_by) VALUES
@@ -105,7 +105,7 @@ INSERT INTO admins (profile, name, email, password, status, created_by) VALUES
 ('profile100.jpg', 'Reema Khan', 'reema.khan100@election.gov.pk', '$2y$10$hash100', 'active', 1);
 
 -- =====================================================
--- TABLE 2: USERS (100 Records)
+-- TABLE 2: USERS (100 Records)    *
 -- =====================================================
 
 INSERT INTO users (first_name, last_name, cnic_number, email, status, created_by) VALUES
@@ -141,9 +141,9 @@ INSERT INTO users (first_name, last_name, cnic_number, email, status, created_by
 ('Humaira', 'Baloch', '42101-3234576-0', 'humaira.baloch@email.com', 'active', 1),
 ('Junaid', 'Roy', '42101-4234567-1', 'junaid.roy@email.com', 'active', 1),
 ('Nadia', 'Mustafa', '42101-4234568-2', 'nadia.mustafa@email.com', 'inactive', 1),
-('Omer', 'Aziz', '42101-4234569-3', 'omer.aziz@email.com', 'active', 1),
-('Farah', 'Muneer', '42101-4234570-4', 'farah.muneer@email.com', 'active', 1),
-('Hamza', 'Saeed', '42101-4234571-5', 'hamza.saeed@email.com', 'active', 1),
+('Omer', 'Azeem', '42101-4234569-3', 'omer.azeem@email.com', 'active', 1),
+('Farah', 'Muneer', '42101-4234570-4', 'farah.muneer123@email.com', 'active', 1),
+('Hamza', 'Saeed', '42101-4234571-5', 'hamza.saeed123@email.com', 'active', 1),
 ('Sara', 'Aly', '42101-4234572-6', 'sara.aly@email.com', 'active', 1),
 ('Danish', 'Siddiqui', '42101-4234573-7', 'danish.siddiqui@email.com', 'suspended', 1),
 ('Mahnoor', 'Ali', '42101-4234574-8', 'mahnoor.ali@email.com', 'active', 1),
@@ -190,25 +190,144 @@ INSERT INTO users (first_name, last_name, cnic_number, email, status, created_by
 ('Junaid', 'Abbasi', '42201-3234575-9', 'junaid.abbasi@email.com', 'active', 1),
 ('Nadia', 'Iftikhar', '42201-3234576-0', 'nadia.iftikhar@email.com', 'active', 1),
 ('Omer', 'Aziz', '42201-4234567-1', 'omer.aziz@email.com', 'active', 1),
-('Farah', 'Muneer', '42201-4234568-2', 'farah.muneer@email.com', 'inactive', 1),
-('Hamza', 'Saeed', '42201-4234569-3', 'hamza.saeed@email.com', 'active', 1),
-('Sara', 'Aly', '42201-4234570-4', 'sara.aly@email.com', 'active', 1),
-('Danish', 'Siddiqui', '42201-4234571-5', 'danish.siddiqui@email.com', 'active', 1),
-('Mahnoor', 'Ali', '42201-4234572-6', 'mahnoor.ali@email.com', 'suspended', 1),
-('Shehzad', 'Aamir', '42201-4234573-7', 'shehzad.aamir@email.com', 'active', 1),
-('Aiman', 'Zaidi', '42201-4234574-8', 'aiman.zaidi@email.com', 'active', 1),
-('Fahad', 'Khalid', '42201-4234575-9', 'fahad.khalid@email.com', 'active', 1),
-('Iqra', 'Shah', '42201-4234576-0', 'iqra.shah@email.com', 'inactive', 1),
-('Ahsan', 'Ashraf', '42201-5234567-1', 'ahsan.ashraf@email.com', 'active', 1),
-('Neelam', 'Butt', '42201-5234568-2', 'neelam.butt@email.com', 'active', 1),
-('Fawad', 'Azhar', '42201-5234569-3', 'fawad.azhar@email.com', 'active', 1),
-('Mahira', 'Mani', '42201-5234570-4', 'mahira.mani@email.com', 'active', 1),
-('Humayun', 'Sheikh', '42201-5234571-5', 'humayun.sheikh@email.com', 'suspended', 1),
-('Sajal', 'Hocane', '42201-5234572-6', 'sajal.hocane@email.com', 'active', 1),
-('Adnan', 'Saeed', '42201-5234573-7', 'adnan.saeed@email.com', 'active', 1),
-('Maya', 'Rehman', '42201-5234574-8', 'maya.rehman@email.com', 'active', 1),
-('Feroze', 'Munawar', '42201-5234575-9', 'feroze.munawar@email.com', 'active', 1),
-('Hania', 'Yousuf', '42201-5234576-0', 'hania.yousuf@email.com', 'active', 1);
+('Farah', 'Muneer', '42201-4234568-2', 'farah.muneer2@email.com', 'inactive', 1),
+('Hamza', 'Saeed', '42201-4234569-3', 'hamza.saeed2@email.com', 'active', 1),
+('Sara', 'Aly', '42201-4234570-4', 'sara.aly2@email.com', 'active', 1),
+('Danish', 'Siddiqui', '42201-4234571-5', 'danish.siddiqui2@email.com', 'active', 1),
+('Mahnoor', 'Ali', '42201-4234572-6', 'mahnoor.ali2@email.com', 'suspended', 1),
+('Shehzad', 'Aamir', '42201-4234573-7', 'shehzad.aamir2@email.com', 'active', 1),
+('Aiman', 'Zaidi', '42201-4234574-8', 'aiman.zaidi2@email.com', 'active', 1),
+('Fahad', 'Khalid', '42201-4234575-9', 'fahad.khalid2@email.com', 'active', 1),
+('Iqra', 'Shah', '42201-4234576-0', 'iqra.shah2@email.com', 'inactive', 1),
+('Ahsan', 'Ashraf', '42201-5234567-1', 'ahsan.ashraf2@email.com', 'active', 1),
+('Neelam', 'Butt', '42201-5234568-2', 'neelam.butt2@email.com', 'active', 1),
+('Fawad', 'Azhar', '42201-5234569-3', 'fawad.azhar2@email.com', 'active', 1),
+('Mahira', 'Mani', '42201-5234570-4', 'mahira.mani2@email.com', 'active', 1),
+('Humayun', 'Sheikh', '42201-5234571-5', 'humayun.sheikh2@email.com', 'suspended', 1),
+('Sajal', 'Hocane', '42201-5234572-6', 'sajal.hocane2@email.com', 'active', 1),
+('Adnan', 'Saeed', '42201-5234573-7', 'adnan.saeed2@email.com', 'active', 1),
+('Maya', 'Rehman', '42201-5234574-8', 'maya.rehman2@email.com', 'active', 1),
+('Feroze', 'Munawar', '42201-5234575-9', 'feroze.munawar2@email.com', 'active', 1),
+('Hania', 'Yousuf', '42201-5234576-0', 'hania.yousuf2@email.com', 'active', 1);
+
+-- =====================================================
+-- TABLE 3: ROLES (100 Records) *
+-- =====================================================
+
+INSERT INTO roles (role_name, description) VALUES
+('Admin','Create Election Commissioner and montoring all activities'), 
+('ElectionCommissioner','Manage Election'),
+('PollingOfficer','Approve voter and handle polling station'),
+('Candidate','Create Voter and montoring all activities'),
+('ElectionAgent','Monitoring own candidate polling stations activities'),
+('Voter','Only vote in polling station');
+
+-- =====================================================
+-- TABLE 4: USER_ROLES (100 Records) *
+-- =====================================================
+
+INSERT INTO user_roles (user_id, role_id) VALUES 
+(1,1),
+(2,2),
+(3,3),
+(4,4),
+(5,5),
+(6,6),
+(7,1),
+(8,2),
+(9,3),
+(10,4),
+(11,5),
+(12,6),
+(13,1),
+(14,2),
+(15,3),
+(16,4),
+(17,5),
+(18,6),
+(19,1),
+(20,2),
+(21,3),
+(22,4),
+(23,5),
+(24,6),
+(25,1),
+(26,2),
+(27,3),
+(28,4),
+(29,5),
+(30,6),
+(31,1),
+(32,2),
+(33,3),
+(34,4),
+(35,5),
+(36,6),
+(37,1),
+(38,2),
+(39,3),
+(40,4),
+(41,5),
+(42,6),
+(43,1),
+(44,2),
+(45,3),
+(46,4),
+(47,5),
+(48,6),
+(49,1),
+(50,2),
+(51,3),
+(52,4),
+(53,5),
+(54,6),
+(55,1),
+(56,2),
+(57,3),
+(58,4),
+(59,5),
+(60,6),
+(61,1),
+(62,2),
+(63,3),
+(64,4),
+(65,5),
+(66,6),
+(67,1),
+(68,2),
+(69,3),
+(70,4),
+(71,5),
+(72,6),
+(73,1),
+(74,2),
+(75,3),
+(76,4),
+(77,5),
+(78,6),
+(79,1),
+(80,2),
+(81,3),
+(82,4),
+(83,5),
+(84,6),
+(85,1),
+(86,2),
+(87,3),
+(88,4),
+(89,5),
+(90,6),
+(91,1),
+(92,2),
+(93,3),
+(94,4),
+(95,5),
+(96,6),
+(97,1),
+(98,2),
+(99,3),
+(100,4);
+
 
 -- =====================================================
 -- TABLE 7: Cities (100 Records)
