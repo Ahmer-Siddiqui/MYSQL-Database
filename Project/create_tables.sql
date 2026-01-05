@@ -430,7 +430,6 @@ CREATE TABLE election_results (
     deleted_by INT,
     CONSTRAINT fk_election_results_election FOREIGN KEY (election_id) REFERENCES elections(id) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT fk_election_results_candidate FOREIGN KEY (candidate_id) REFERENCES candidates(id) ON DELETE CASCADE ON UPDATE CASCADE,
-    CONSTRAINT fk_election_results_station FOREIGN KEY (station_id) REFERENCES polling_stations(id) ON DELETE SET NULL ON UPDATE CASCADE,
     CONSTRAINT fk_election_results_verifier FOREIGN KEY (verified_by) REFERENCES users(id) ON DELETE SET NULL ON UPDATE CASCADE
 );
 
@@ -611,7 +610,7 @@ CREATE TABLE security_incidents (
 CREATE TABLE ballot_papers (
     id INT PRIMARY KEY AUTO_INCREMENT,
     election_id INT NOT NULL,
-    station_id INT NOT NULL,
+    station_id INT,
     ballot_number VARCHAR(30) UNIQUE NOT NULL,
     serial_number VARCHAR(50),
     batch_number VARCHAR(30),
