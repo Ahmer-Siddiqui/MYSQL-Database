@@ -13,7 +13,7 @@
 -- TABLE CREATION (35 Tables)
 -- =====================================================
 
--- 1. ADMINS
+-- 1. ADMINS *
 CREATE TABLE admins (
     id INT PRIMARY KEY AUTO_INCREMENT,
     profile VARCHAR(255),
@@ -30,7 +30,7 @@ CREATE TABLE admins (
     deleted_by INT
 );
 
--- 2. USERS
+-- 2. USERS *
 CREATE TABLE users (
     id INT PRIMARY KEY AUTO_INCREMENT,
     profile VARCHAR(255),
@@ -52,7 +52,7 @@ CREATE TABLE users (
     deleted_by INT
 );
 
--- 3. ROLES
+-- 3. ROLES *
 CREATE TABLE roles (
     id INT PRIMARY KEY AUTO_INCREMENT,
     role_name VARCHAR(50) UNIQUE NOT NULL,
@@ -69,7 +69,7 @@ CREATE TABLE roles (
     deleted_by INT
 );
 
--- 4. USER_ROLES
+-- 4. USER_ROLES *
 CREATE TABLE user_roles (
     id INT PRIMARY KEY AUTO_INCREMENT,
     user_id INT NOT NULL,
@@ -87,7 +87,7 @@ CREATE TABLE user_roles (
     CONSTRAINT fk_user_roles_role FOREIGN KEY (role_id) REFERENCES roles(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
--- 5. ELECTIONS
+-- 5. ELECTIONS *
 CREATE TABLE elections (
     id INT PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(200) NOT NULL,
