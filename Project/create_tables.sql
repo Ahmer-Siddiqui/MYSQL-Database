@@ -191,7 +191,7 @@ CREATE TABLE political_parties (
     deleted_by INT
 );
 
--- 11. POSITIONS
+-- 11. POSITIONS *
 CREATE TABLE positions (
     id INT PRIMARY KEY AUTO_INCREMENT,
     position_code VARCHAR(10) UNIQUE NOT NULL,
@@ -208,7 +208,7 @@ CREATE TABLE positions (
     deleted_by INT
 );
 
--- 12. CANDIDATES
+-- 12. CANDIDATES *
 CREATE TABLE candidates (
     id INT PRIMARY KEY AUTO_INCREMENT,
     user_id INT UNIQUE NOT NULL,
@@ -231,14 +231,13 @@ CREATE TABLE candidates (
     CONSTRAINT fk_candidates_position FOREIGN KEY (position_id) REFERENCES positions(id) ON DELETE SET NULL ON UPDATE CASCADE
 );
 
--- 13. DOCUMENT_TYPES
+-- 13. DOCUMENT_TYPES *
 CREATE TABLE document_types (
     id INT PRIMARY KEY AUTO_INCREMENT,
     type_name VARCHAR(50) UNIQUE NOT NULL,
     description TEXT,
     type_code VARCHAR(20),
     required_for VARCHAR(50),
-    validity_period INT DEFAULT 365,
     file_format VARCHAR(50),
     max_file_size INT DEFAULT 5,
     status ENUM('active','inactive') DEFAULT 'active',
@@ -418,13 +417,9 @@ CREATE TABLE election_results (
     id INT PRIMARY KEY AUTO_INCREMENT,
     election_id INT NOT NULL,
     candidate_id INT NOT NULL,
-    station_id INT,
     total_votes INT DEFAULT 0,
     vote_percentage DECIMAL(5,2) DEFAULT 0.00,
-    result_code VARCHAR(30),
-    rank_position INT,
     is_winner BOOLEAN DEFAULT FALSE,
-    declaration_date DATE,
     verified_by INT,
     status ENUM('provisional','final','contested','cancelled') DEFAULT 'provisional',
     is_enable BOOLEAN DEFAULT TRUE,
