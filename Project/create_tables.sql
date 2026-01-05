@@ -105,7 +105,7 @@ CREATE TABLE elections (
     deleted_by INT
 );
 
--- 6. ELECTION_COMMISSION
+-- 6. ELECTION_COMMISSION *
 CREATE TABLE election_commission (
     id INT PRIMARY KEY AUTO_INCREMENT,
     user_id INT UNIQUE NOT NULL,
@@ -123,7 +123,7 @@ CREATE TABLE election_commission (
     CONSTRAINT fk_election_commission_user FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
--- 7. CITIES
+-- 7. CITIES *
 CREATE TABLE cities (
     id INT PRIMARY KEY AUTO_INCREMENT,
     city_name VARCHAR(100) UNIQUE NOT NULL,
@@ -139,7 +139,7 @@ CREATE TABLE cities (
     deleted_by INT
 );
 
--- 8. DISTRICTS
+-- 8. DISTRICTS *
 CREATE TABLE districts (
     id INT PRIMARY KEY AUTO_INCREMENT,
     district_name VARCHAR(100) NOT NULL,
@@ -158,7 +158,7 @@ CREATE TABLE districts (
     CONSTRAINT fk_districts_city FOREIGN KEY (city_id) REFERENCES cities(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
--- 9. POLLING_STATIONS
+-- 9. POLLING_STATIONS *
 CREATE TABLE polling_stations (
     id INT PRIMARY KEY AUTO_INCREMENT,
     station_name VARCHAR(150) NOT NULL,
@@ -175,7 +175,7 @@ CREATE TABLE polling_stations (
     CONSTRAINT fk_polling_stations_district FOREIGN KEY (district_id) REFERENCES districts(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
--- 10. POLITICAL_PARTIES
+-- 10. POLITICAL_PARTIES *
 CREATE TABLE political_parties (
     id INT PRIMARY KEY AUTO_INCREMENT,
     party_name VARCHAR(100) UNIQUE NOT NULL,
@@ -715,7 +715,7 @@ CREATE TABLE party_alliances (
     CONSTRAINT fk_party_alliances_allied FOREIGN KEY (allied_party_id) REFERENCES political_parties(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
--- 35. ELECTION_BUDGETS
+-- 35. ELECTION_BUDGETS *
 CREATE TABLE election_budgets (
     id INT PRIMARY KEY AUTO_INCREMENT,
     election_id INT NOT NULL,
