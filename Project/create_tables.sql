@@ -219,7 +219,7 @@ CREATE TABLE positions (
 -- 12. CANDIDATES *
 CREATE TABLE candidates (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    user_id INT UNIQUE NOT NULL,
+    user_id INT NOT NULL,
     election_id INT NOT NULL,
     party_id INT NOT NULL,
     position_id INT,
