@@ -6,8 +6,8 @@
 -- SET FOREIGN_KEY_CHECKS = 0;
 
 -- DROP DATABASE IF EXISTS election_management_system;
--- CREATE DATABASE election_management_system;
--- USE election_management_system;
+CREATE DATABASE election_management_system;
+USE election_management_system;
 
 -- =====================================================
 -- TABLE CREATION (35 Tables)
@@ -166,14 +166,22 @@ CREATE TABLE polling_stations (
     district_id INT NOT NULL,
     registered_voters INT DEFAULT 0,
     status ENUM('active','inactive','suspended','under_maintenance') DEFAULT 'inactive',
-    is_enable BOOLEAN DEFAULT TRUE,
+    is_enabled BOOLEAN DEFAULT TRUE,
+
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    deleted_at TIMESTAMP NULL,
+
     created_by INT,
     updated_by INT,
     deleted_by INT,
-    CONSTRAINT fk_polling_stations_district FOREIGN KEY (district_id) REFERENCES districts(id) ON DELETE CASCADE ON UPDATE CASCADE
+
+    CONSTRAINT fk_polling_stations_district FOREIGN KEY (district_id) REFERENCES districts(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT fk_ps_created_by FOREIGN KEY (created_by) REFERENCES admins(id),
+    CONSTRAINT fk_ps_updated_by FOREIGN KEY (updated_by) REFERENCES admins(id),
+    CONSTRAINT fk_ps_deleted_by FOREIGN KEY (deleted_by) REFERENCES admins(id)
 );
+
 
 -- 10. POLITICAL_PARTIES *
 CREATE TABLE political_parties (
@@ -346,7 +354,7 @@ CREATE TABLE complaints (
     complainant_id INT,
     description TEXT,
     evidence_path VARCHAR(255),
-    priority ENUM('urgent','high','medium','low') DEFAULT 'medium',
+    priority ENUM('critical','high','medium','low') DEFAULT 'medium',
     assigned_to INT,
     resolution_notes TEXT,
     resolved_date DATE,
@@ -463,7 +471,7 @@ CREATE TABLE notifications (
     title VARCHAR(150) NOT NULL,
     message TEXT,
     channel ENUM('email','sms','push','in-app') DEFAULT 'in-app',
-    priority ENUM('urgent','high','normal','low') DEFAULT 'normal',
+    priority ENUM('critical','high','normal','low') DEFAULT 'normal',
     sent_date TIMESTAMP NULL,
     status ENUM('sent','pending','failed','cancelled') DEFAULT 'pending',
     is_enable BOOLEAN DEFAULT TRUE,
